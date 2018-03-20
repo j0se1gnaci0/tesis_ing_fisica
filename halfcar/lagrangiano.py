@@ -4,7 +4,7 @@ from scipy.integrate import odeint
 from matplotlib.pylab import *
 from mpl_toolkits.axes_grid1 import host_subplot
 
-font={'size' : 9}
+font={'size' : 8}
 matplotlib.rc('font',**font)
 
 f0=figure(num=1,figsize=(12,12))
