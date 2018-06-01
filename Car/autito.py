@@ -17,7 +17,7 @@ def ecuacion(X,t,u):
 
 def f(t):
     
-    return 0.0
+    return 2.0
 
 def equation(X,t,u):
 
@@ -43,14 +43,14 @@ def integrar(t0,tf,x0,v0,pasos):
     x0=x0[-1]
     v0=v0[-1]
 
-    t0+=1
-    tf+=1
+    t0+=0.033
+    tf+=0.033
     
     return x0,v0,t0,tf
     
 def juego():
     pygame.init()
-
+    timer = pygame.time.Clock()
     ancho = 900
     alto = 900
 
@@ -58,13 +58,13 @@ def juego():
 
     pygame.display.set_caption("Vehiculo 2D")
 
-    FPS = pygame.time.Clock()
+    #FPS = pygame.time.Clock()
 
     auto = pygame.image.load('car.png')
 
 
     t0    = 0.0
-    tf    = 1.0
+    tf    = 33.0/1000
     pasos = 0.01   #fijo
     
     x0 = 0.0     # [pixeles]
@@ -72,11 +72,12 @@ def juego():
 
     v0 = 10.0 # m/s
     
-
     blanco = pygame.Color(255,255,255)
-    
-    while True:
+    #timer = pygame.time.Clock()
+    #timer = pygame.time.Clock()
 
+    while True:
+          #timer = pygame.time.Clock()
           ventana.fill(blanco)
           ventana.blit(auto,(x0,y0))
           
@@ -90,14 +91,15 @@ def juego():
                    pygame.quit()
                    sys.exit()
 
-          x0,v0,t0,tf=integrar(t0,tf,x0,v0,pasos)
-            
-          print v0
-          print x0
-          if v0<=0:
-              v0=0
-              
-          FPS.tick(30) 
+          x0,v0,t0,tf = integrar(t0,tf,x0,v0,pasos)
+
+          print timer.tick() 
+
+          #print v0
+          #print x0
+          #if v0<=0:
+          #   v0=0
+          #print timer
           pygame.display.update()
     
 
