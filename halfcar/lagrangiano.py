@@ -154,7 +154,7 @@ y=odeint(derivada,init,t,args=(c1,dc1,c2,dc2))
 
 
 p011, =ax01.plot(t,y[:,0],'b-',label="z1")
-p012, =ax01.plot(t,y[:,2],'g-', label="z2")
+p012, =ax01.plot(t,y[:,2],'g-',label="z2")
 p013, =ax01.plot(t,y[:,4],'r',label="z3")
 p014, =ax01.plot(t,y[:,6],'y',label="theta")
 

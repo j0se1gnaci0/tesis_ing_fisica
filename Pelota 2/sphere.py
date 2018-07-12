@@ -26,8 +26,6 @@ def proceso(t0,tf,y,vy,pasos):
     vy = Y[:,1]
     y  = y[-1]  #[m]
     vy = vy[-1] #[m]
-    #y*=4389
-    #vy*=4.4
     delta_t=tf-t0
 
     t0 +=delta_t
@@ -35,7 +33,9 @@ def proceso(t0,tf,y,vy,pasos):
     
     return y,vy,t0,tf
     
-    
+def camera(x,y):
+    return (x,y*4389)
+
 def caida_libre():
     reloj = pygame.time.Clock()
     FPS = 30
@@ -55,14 +55,14 @@ def caida_libre():
     y = 0
 
     vy = 0
-    
+    slow=1
     t0 = 0
-    tf = 0.033
+    tf = 1./FPS/slow
     pasos = 10
     
     while True:
           ventana.fill(blanco)
-          ventana.blit(pelota,(x,y))
+          ventana.blit(pelota,camera(x,y))
 
           for event in pygame.event.get():
               if event.type == QUIT:
@@ -75,8 +75,7 @@ def caida_libre():
                     sys.exit()
 
           y,vy,t0,tf = proceso(t0,tf,y,vy,pasos)
-          #y=y*4389
-          #vy=vy*4.4
+          
           print (y,vy,tf)
           reloj.tick(FPS)
     
