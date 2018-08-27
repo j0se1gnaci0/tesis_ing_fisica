@@ -8,7 +8,7 @@ font={'size' : 6}
 matplotlib.rc('font',**font)
 
 f0=figure(num=1,figsize=(12,12))
-f0.suptitle("Quarter-Car Model",fontsize=12)
+f0.suptitle("Half-Car Model",fontsize=12)
 
 ax01=subplot2grid((2,1),(0,0))
 ax02=subplot2grid((2,1),(1,0))
