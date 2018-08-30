@@ -14,7 +14,7 @@ m  = 1795.     #[kg]
 g  = 9.8      #[m/s^2]
 y0 = 0.4
 l0 = y0 + (m*g)/(2.*k)
-alpha = 10000. 
+alpha = 10000.
 
 def dydt(X,t):
 
@@ -22,8 +22,8 @@ def dydt(X,t):
     
     x,dx,y,dy,theta,dtheta = X
 
-    delta_x1 = L/2. + x - L/2. * np.cos(theta)
-    delta_x2 = x + L/2. * np.cos(theta) - L/2.
+    delta_x1 = -L/2. + x + L/2. * np.cos(theta)
+    delta_x2 = x - L/2. * np.cos(theta) + L/2.
     delta_y1 = y + y0 - L/2. * np.sin(theta)
     delta_y2 = y + y0 + L/2. * np.sin(theta)
     delta_l1 = np.sqrt(delta_x1**2+delta_y1**2)
@@ -33,9 +33,9 @@ def dydt(X,t):
     #sen_alfa = delta_y1/delta_l1
     
 
-    d2x=(-k*delta_x1*(1.-l0/delta_l1)-k*delta_x2*(1.-l0/delta_l2))/m     #-alpha*dx)/m
+    d2x=(k*delta_x1*(1.-l0/delta_l1)+k*delta_x2*(1.-l0/delta_l2))/m     #-alpha*dx)/m
     d2y=(-k*delta_y1*(1.-l0/delta_l1)-k*delta_y2*(1.-l0/delta_l2)-m*g)/m         #-alpha*dy)/m
-    d2theta=(-k*(L/2.*np.sin(theta)*delta_x1-L/2.*np.cos(theta)*delta_y1)*(1.-l0/delta_l1)-k*(1.-l0/delta_l2)*(L/2.*np.cos(theta)*delta_y2-L/2.*np.sin(theta)*delta_x2)-alpha*dtheta)/I
+    d2theta=(L*k/2.*(delta_l1-delta_l2))/I
 
     return [dx,d2x,dy,d2y,dtheta,d2theta]
 
@@ -47,7 +47,6 @@ print(len(t))
 init=[0.5,0.5,1.0,2.0,3*np.pi/180,3*np.pi/180]
 init = [0,0,0,0,np.pi/20.,0]
 sol=odeint(dydt,init,t,args=())
-
 
 font={'size': 6}
 matplotlib.rc('font',**font)
@@ -80,3 +79,7 @@ ani = animation.FuncAnimation(f0, animate, len(t), interval=delta_t*1000, blit=T
 #ax01.legend([p011,p012,p013],[p011.get_label(),p012.get_label(),p013.get_label()])
 
 plt.show()
+
+
+
+
