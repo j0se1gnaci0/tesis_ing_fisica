@@ -34,7 +34,7 @@ def dydt(X,t):
     #sen_alfa = delta_y1/delta_l1
     
     v_x = dx
-    a_x = -k*np.cos(alpha)*(delta_l1+delta_l2)/m
+    a_x = k*np.cos(alpha)*(delta_l1+delta_l2)/m
     v_y = dy
     a_y = -k*np.sin(alpha)*(delta_l1+delta_l2)/m - g
     v_theta = dtheta

@@ -33,8 +33,8 @@ def dydt(X,t):
     #sen_alfa = delta_y1/delta_l1
     
 
-    d2x=(-k*delta_x1*(1.-l0/delta_l1)-k*delta_x2*(1.-l0/delta_l2))/m     #-alpha*dx)/m
-    d2y=(-k*delta_y1*(1.-l0/delta_l1)-k*delta_y2*(1.-l0/delta_l2)-m*g)/m         #-alpha*dy)/m
+    d2x=(-k*delta_x1*(1.-l0/delta_l1)-k*delta_x2*(1.-l0/delta_l2))/m     #- alpha*dx/m
+    d2y=(-k*delta_y1*(1.-l0/delta_l1)-k*delta_y2*(1.-l0/delta_l2)-m*g)/m  # - alpha*dy/m
     d2theta=(-k*(L/2.*np.sin(theta)*delta_x1-L/2.*np.cos(theta)*delta_y1)*(1.-l0/delta_l1)-k*(1.-l0/delta_l2)*(L/2.*np.cos(theta)*delta_y2-L/2.*np.sin(theta)*delta_x2)-alpha*dtheta)/I
 
     return [dx,d2x,dy,d2y,dtheta,d2theta]
