@@ -14,7 +14,7 @@ m  = 1795.     #[kg]
 g  = 9.8      #[m/s^2]
 y0 = 0.4
 l0 = y0 + (m*g)/(2.*k)
-alpha = 10000.
+alpha = 0.
 
 def dydt(X,t):
 
@@ -44,8 +44,8 @@ tf=30.0
 delta_t = 1./30
 t=np.arange(t0,tf,delta_t)
 print(len(t))
-init=[0.5,0.5,1.0,2.0,3*np.pi/180,3*np.pi/180]
-init = [0,0,0,0,np.pi/20.,0]
+init=[0,0,0.1,0.0,0,0]
+#init = [0,0,0,0,np.pi/20.,0]
 sol=odeint(dydt,init,t,args=())
 
 font={'size': 6}

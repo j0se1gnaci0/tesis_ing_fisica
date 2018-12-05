@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{2}{0}{1}
+\beamer@sectionintoc {2}{Simulador y Software}{3}{0}{2}
+\beamer@sectionintoc {3}{Motivaci\IeC {\'o}n}{4}{0}{3}
+\beamer@sectionintoc {4}{Objetivos}{5}{0}{4}
+\beamer@sectionintoc {5}{Plataforma Stewart}{8}{0}{5}
+\beamer@sectionintoc {6}{Plataforma Stewart}{9}{0}{6}
+\beamer@sectionintoc {7}{Plataforma Stewart}{11}{0}{7}
+\beamer@sectionintoc {8}{Modelo 2D}{12}{0}{8}
+\beamer@sectionintoc {9}{Quarter-Car}{13}{0}{9}
+\beamer@sectionintoc {10}{Modelo 2D}{15}{0}{10}
+\beamer@sectionintoc {11}{Quarter-CAR}{16}{0}{11}
+\beamer@sectionintoc {12}{Ecuaciones de movimiento quarter car}{18}{0}{12}
+\beamer@sectionintoc {13}{Modelo 2D}{19}{0}{13}
+\beamer@sectionintoc {14}{Modelo 2D}{20}{0}{14}
